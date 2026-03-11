@@ -1,20 +1,19 @@
 <?php
 
-// =============================================
-//  Procesamiento del formulario de contacto
-// =============================================
+//  Procesamiento del formulario de contacto en el servidor
+
 
 // Solo procesamos si la petición es POST
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
-    // --- 1. Recoger y limpiar los datos ---
+    // 1. Recoger y limpiar los datos
     $nombre    = trim(htmlspecialchars($_POST["nombre"]    ?? ""));
     $apellidos = trim(htmlspecialchars($_POST["apellidos"] ?? ""));
     $email     = trim(htmlspecialchars($_POST["email"]     ?? ""));
     $telefono  = trim(htmlspecialchars($_POST["telefono"]  ?? ""));
     $mensaje   = trim(htmlspecialchars($_POST["mensaje"]   ?? ""));
 
-    // --- 2. Validación ---
+    // 2. Validación
     $errores = [];
 
     if (empty($nombre)) {
@@ -43,7 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $errores[] = "El mensaje es obligatorio.";
     }
 
-    // --- 3. Pasar datos a la vista y cargarla ---
+    // 3. Pasar datos a la vista y cargarla
     $tipo  = empty($errores) ? "exito" : "error";
     $datos = compact("nombre", "apellidos", "email", "telefono", "mensaje");
 
