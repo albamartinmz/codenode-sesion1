@@ -11,7 +11,7 @@ Formulario de contacto desarrollado con HTML semántico, CSS moderno, JavaScript
 
 ## Estructura de archivos
 
-```
+
 formulario/
 ├── index.html        → Estructura del formulario (HTML semántico)
 ├── styles.css        → Estilos y diseño (CSS con variables)
@@ -19,13 +19,12 @@ formulario/
 ├── index.php         → Lógica y validación del servidor (PHP)
 ├── confirmation.php  → Vista de resultado (éxito o errores)
 └── README.md         → Este archivo
-```
+
 
 La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
 - `index.php` solo procesa y valida los datos, sin HTML
 - `confirmation.php` solo muestra el resultado, sin lógica
 
----
 
 ## Campos del formulario
 
@@ -37,7 +36,6 @@ La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
 | Teléfono   | Tel    | No          | Formato numérico, 7-15 caracteres        |
 | Mensaje    | Textarea | Sí        | No puede estar vacío                     |
 
----
 
 ## Tecnologías utilizadas
 
@@ -46,7 +44,6 @@ La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
 - **JavaScript** — Validación en el cliente con expresiones regulares, eventos `blur` y `submit`
 - **PHP** — Validación en el servidor, saneamiento de datos con `htmlspecialchars` y `filter_var`
 
----
 
 ## Cómo ejecutarlo
 
@@ -56,22 +53,21 @@ La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
 ### Pasos
 
 1. Copia la carpeta `formulario/` dentro de:
-   ```
+   
    C:\xampp\htdocs\codenode\semana1\formulario\
-   ```
+   
 
 2. Abre el XAMPP Control Panel y arranca **Apache**.  
    > Si Apache no arranca desde el panel, ábrelo manualmente con CMD como administrador:
-   ```
+   
    C:\xampp\apache\bin\httpd.exe
-   ```
+   
 
 3. Abre el navegador y accede a:
-   ```
+   
    http://localhost:8080/codenode/semana1/formulario/
-   ```
+   
 
----
 
 ## Validaciones implementadas
 
@@ -82,11 +78,10 @@ La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
 
 ### PHP (backend)
 - Segunda capa de validación independiente del navegador
-- Sanitiza los datos con `htmlspecialchars` para prevenir XSS
+- Para prevenir ataque XSS, con `htmlspecialchars` convierte caracteres peligrosos en texto para evitar que un usuario inyecte código malicioso en la página.
 - Muestra una tabla con los datos recibidos si todo es correcto
 - Muestra la lista de errores si alguna validación falla
 
----
 
 ## Caracteres soportados en nombre y apellidos
 
@@ -104,4 +99,4 @@ La validación acepta caracteres de múltiples idiomas:
 
 ---
 
-*Desarrollado durante las prácticas DAW en Codenode*
+*Desarrollado por Alba Martín durante las prácticas DAW en CodeNode*
