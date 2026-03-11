@@ -1,6 +1,3 @@
-/* ===========================
-   Variables & Reset
-=========================== */
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500&display=swap');
 
 :root {
@@ -38,17 +35,13 @@ body {
                     radial-gradient(circle at 80% 80%, #13181e 0%, transparent 50%);
 }
 
-/* ===========================
-   Contenedor principal
-=========================== */
+
 .container {
   width: 100%;
   max-width: 600px;
 }
 
-/* ===========================
-   Sección del formulario
-=========================== */
+
 .form-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -63,9 +56,7 @@ body {
   to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ===========================
-   Cabecera
-=========================== */
+
 .form-header {
   margin-bottom: 2rem;
   border-left: 3px solid var(--accent);
@@ -85,9 +76,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* ===========================
-   Fieldset & Legend
-=========================== */
+
 fieldset {
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -104,9 +93,7 @@ legend {
   padding: 0 0.5rem;
 }
 
-/* ===========================
-   Grupos de campo
-=========================== */
+
 .form-group {
   display: flex;
   flex-direction: column;
@@ -126,9 +113,7 @@ label span {
   margin-left: 2px;
 }
 
-/* ===========================
-   Inputs & Textarea
-=========================== */
+
 input,
 textarea {
   background: var(--bg);
@@ -161,9 +146,7 @@ textarea {
   min-height: 120px;
 }
 
-/* ===========================
-   Nota de obligatorios
-=========================== */
+
 .required-note {
   font-size: 0.78rem;
   color: var(--muted);
@@ -174,9 +157,7 @@ textarea {
   color: var(--accent);
 }
 
-/* ===========================
-   Botón de envío
-=========================== */
+
 button[type="submit"] {
   width: 100%;
   background: var(--accent);
@@ -202,9 +183,7 @@ button[type="submit"]:active {
   transform: translateY(0);
 }
 
-/* ===========================
-   Responsive
-=========================== */
+/* Responsive */
 @media (max-width: 480px) {
   .form-section {
     padding: 1.8rem 1.2rem 1.4rem;
@@ -215,9 +194,7 @@ button[type="submit"]:active {
   }
 }
 
-/* ===========================
-   Validación (errores JS)
-=========================== */
+/* Validación (errores JS) */
 .field-error {
   color: var(--error);
   font-size: 0.78rem;
@@ -231,9 +208,7 @@ textarea.invalid {
   box-shadow: 0 0 0 3px rgba(224, 108, 108, 0.15) !important;
 }
 
-/* ===========================
-   Página de resultado (PHP)
-=========================== */
+/* Página de resultado (PHP) */
 .result-box {
   background: var(--surface);
   border: 1px solid var(--border);
