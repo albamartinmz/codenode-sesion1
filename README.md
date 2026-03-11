@@ -11,14 +11,14 @@ Formulario de contacto desarrollado con HTML semántico, CSS moderno, JavaScript
 
 ## Estructura de archivos
 
-
-formulario/
-├── index.html        → Estructura del formulario (HTML semántico)
-├── styles.css        → Estilos y diseño (CSS con variables)
-├── script.js         → Validación en tiempo real (JavaScript)
-├── index.php         → Lógica y validación del servidor (PHP)
-├── confirmation.php  → Vista de resultado (éxito o errores)
-└── README.md         → Este archivo
+codenode-sesion1/
+├── README.md
+└── formulario/
+    ├── index.html
+    ├── styles.css
+    ├── script.js
+    ├── index.php
+    └── confirmation.php
 
 
 La lógica PHP y la presentación están separadas siguiendo buenas prácticas:
