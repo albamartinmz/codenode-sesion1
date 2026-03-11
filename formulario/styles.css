@@ -1,0 +1,306 @@
+/* ===========================
+   Variables & Reset
+=========================== */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg:        #0f0f0f;
+  --surface:   #1a1a1a;
+  --border:    #2e2e2e;
+  --accent:    #c8a96e;
+  --accent-hov:#e0c48a;
+  --text:      #e8e8e8;
+  --muted:     #888;
+  --error:     #e06c6c;
+  --radius:    10px;
+  --transition: 0.25s ease;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 300;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+
+  /* Sutil textura de fondo */
+  background-image: radial-gradient(circle at 20% 20%, #1e1a13 0%, transparent 50%),
+                    radial-gradient(circle at 80% 80%, #13181e 0%, transparent 50%);
+}
+
+/* ===========================
+   Contenedor principal
+=========================== */
+.container {
+  width: 100%;
+  max-width: 600px;
+}
+
+/* ===========================
+   Sección del formulario
+=========================== */
+.form-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem 2.5rem 2rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===========================
+   Cabecera
+=========================== */
+.form-header {
+  margin-bottom: 2rem;
+  border-left: 3px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.form-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--accent);
+  line-height: 1.1;
+}
+
+.form-header p {
+  margin-top: 0.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* ===========================
+   Fieldset & Legend
+=========================== */
+fieldset {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.4rem 1.4rem 0.6rem;
+  margin-bottom: 1.4rem;
+}
+
+legend {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  padding: 0 0.5rem;
+}
+
+/* ===========================
+   Grupos de campo
+=========================== */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.1rem;
+}
+
+label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text);
+  letter-spacing: 0.02em;
+}
+
+label span {
+  color: var(--accent);
+  margin-left: 2px;
+}
+
+/* ===========================
+   Inputs & Textarea
+=========================== */
+input,
+textarea {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 300;
+  padding: 0.7rem 1rem;
+  width: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(200, 169, 110, 0.12);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ===========================
+   Nota de obligatorios
+=========================== */
+.required-note {
+  font-size: 0.78rem;
+  color: var(--muted);
+  margin-bottom: 1.4rem;
+}
+
+.required-note span {
+  color: var(--accent);
+}
+
+/* ===========================
+   Botón de envío
+=========================== */
+button[type="submit"] {
+  width: 100%;
+  background: var(--accent);
+  color: #0f0f0f;
+  border: none;
+  border-radius: var(--radius);
+  cursor: pointer;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.85rem;
+  transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+
+button[type="submit"]:hover {
+  background: var(--accent-hov);
+  box-shadow: 0 4px 20px rgba(200, 169, 110, 0.3);
+  transform: translateY(-1px);
+}
+
+button[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* ===========================
+   Responsive
+=========================== */
+@media (max-width: 480px) {
+  .form-section {
+    padding: 1.8rem 1.2rem 1.4rem;
+  }
+
+  .form-header h1 {
+    font-size: 1.6rem;
+  }
+}
+
+/* ===========================
+   Validación (errores JS)
+=========================== */
+.field-error {
+  color: var(--error);
+  font-size: 0.78rem;
+  margin-top: 0.2rem;
+  display: none;
+}
+
+input.invalid,
+textarea.invalid {
+  border-color: var(--error) !important;
+  box-shadow: 0 0 0 3px rgba(224, 108, 108, 0.15) !important;
+}
+
+/* ===========================
+   Página de resultado (PHP)
+=========================== */
+.result-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2.5rem;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+  animation: fadeUp 0.5s ease both;
+}
+
+.result-box h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.result-box.exito h2 { color: var(--accent); }
+.result-box.error h2 { color: var(--error);  }
+
+.datos-tabla {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.datos-tabla th,
+.datos-tabla td {
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.datos-tabla th {
+  color: var(--accent);
+  font-weight: 500;
+  width: 35%;
+}
+
+.datos-tabla td {
+  color: var(--text);
+}
+
+.error-list {
+  list-style: none;
+  padding: 0;
+  margin-top: 0.5rem;
+}
+
+.error-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border);
+  color: var(--error);
+  font-size: 0.9rem;
+}
+
+.error-list li::before {
+  content: "✕  ";
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1.8rem;
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.back-link:hover { color: var(--accent-hov); }
